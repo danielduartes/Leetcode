@@ -8,10 +8,10 @@ class Solution(object):
         vogais = []
         indice = 0
         for i in range(len(s)):
-            if s[i] in "aeiou" or s[i] in "AEIOU":
+            if s[i] in "aeiouAEIOU":
                 vogais.insert(0, s[i])
         for letra in s:
-            if letra in "aeiou" or letra in "AEIOU":
+            if letra in "aeiouAEIOU":
                 output += vogais[indice]
                 indice += 1
             else:
