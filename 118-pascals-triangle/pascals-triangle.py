@@ -4,10 +4,10 @@ class Solution(object):
         :type numRows: int
         :rtype: List[List[int]]
         """
-        if numRows == 2:
-            triangulo = [[1],[1,1]]
-        elif numRows == 1:
+        if numRows == 1:
             triangulo = [[1]]
+        elif numRows == 2:
+            triangulo = [[1],[1,1]]
         elif numRows > 2:
             triangulo = [[1],[1,1]]
             for i in range(numRows):
