@@ -6,10 +6,8 @@ class Solution(object):
         """
         if numRows == 1:
             triangulo = [[1]]
-        elif numRows == 2:
-            triangulo = [[1],[1,1]]
-        elif numRows > 2:
-            triangulo = [[1],[1,1]]
+        else:
+            triangulo = [[1], [1, 1]]
             for i in range(numRows):
                 linha = [1]
                 if i > 1:
@@ -18,5 +16,5 @@ class Solution(object):
                         linha.append(novo_numero)
                     linha.append(1)
                     triangulo.append(linha)
-                
+
         return triangulo
