@@ -1,17 +1,21 @@
-class Solution(object):
-    def mergeAlternately(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: str
-        """
-        palavras = [word1, word2]
-        merged = ""
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        merged_string = ""
+        j = 0
 
-        for i in range(len(min(palavras, key=len))):
-            merged += word1[i]
-            merged += word2[i]
-        for j in range(len(min(palavras, key=len)), len(max(palavras, key=len))):
-            merged += max(palavras, key=len)[j]
-        
-        return merged
+        if len(word1) >= len(word2):
+            for i in range(len(word2)):
+                merged_string += word1[i]
+                merged_string += word2[i]
+                j += 1
+
+        if len(word2) > len(word1):
+            for i in range(len(word1)):
+                merged_string += word1[i]
+                merged_string += word2[i]
+                j += 1
+
+        merged_string += word1[j:]
+        merged_string += word2[j:]
+
+        return merged_string
